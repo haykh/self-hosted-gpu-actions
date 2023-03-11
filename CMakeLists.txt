@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(PROJECT_NAME main-cpu)
+set(PROJECT_NAME main)
 
 project(${PROJECT_NAME}
-  LANGUAGES CXX C
+  LANGUAGES CXX C CUDA
 )
 
 set(CMAKE_CXX_STANDARD 17)
