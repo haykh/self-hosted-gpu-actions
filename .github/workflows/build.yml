@@ -4,14 +4,13 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on:
+      - self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v3.3.0
-      - name: Install CMake
-        run: sudo apt-get install cmake
-      - name: Install GCC
-        run: sudo apt-get install gcc g++
+      # - name: Install CMake
+      #   run: sudo apt-get install cmake
       - name: Build
         run: |
           cmake -B build
