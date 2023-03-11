@@ -1,0 +1,21 @@
+name: Build and Run
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+      - name: Install CMake
+        run: sudo apt-get install cmake
+      - name: Install GCC
+        run: sudo apt-get install gcc g++
+      - name: Build
+        run: |
+          cmake -B build
+          cd build
+          make -j
+      - name: Test
+        run: ./build/src/main-cpu
